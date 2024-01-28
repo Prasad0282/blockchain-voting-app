@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Voting DAPP</title>
+        <!-- <link rel="stylesheet" href="index.css"> -->
+        <link href='https://fonts.googleapis.com/css?family=Open Sans:400,700' rel='stylesheet' type='text/css'>
+        <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+        <style>
+            .LoginSection{
+            box-shadow: inset;
+               width:50px;
+   
+              }
+.userAddress{
+        font-style: Arial;
+        height: 10px;
+    }
+.body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  
+
+}
+.logo{
+                width: 150px;
+                justify-content: center;
+                align-items: center;
+                margin-left: 0px;
+                margin-top: 100px;
+                margin-right: 45px;
+            }
+            .logo:hover{
+               color:white;
+               opacity:1;
+               transition: 0.5s;
+               cursor: pointer;
+            }
+            .logo:active{
+                color:white;
+               opacity:1;
+               transition: 0.5s;
+               cursor: pointer; 
+            }
+
+
+h1,h2,h3{
+    color:#333;
+    margin-right: 50px;
+  
+    
+}
+.table{
+    width:90%;
+    border-collapse:collapse;
+    box-shadow: 10 10 10px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+}
+th,td{
+    padding:30px;
+    border-bottom: 1px solid #ddd;
+    border-radius: 10px;
+}
+ .btn-primary{
+  background-color: #007bff;
+  height:26px;
+  margin-bottom: 3px;
+  padding: 0px 15px;
+ 
+}
+.btn-primary:hover{
+   background-color:#0056b3;
+   border-color:#0056b3
+}
+.btn-primary:active{
+  opacity:1;
+  transition:1;
+  color:#007BFF;
+  background-color: #fff;
+}
+.input-group{
+    margin-bottom:10px;
+}
+.table-bordered{
+    #candidate-1-info,
+    #candidate-1-info,
+    #candidate-1-info{
+       margin-right:30px;
+    }
+     margin-right: 30px;
+
+}
+        </style>
+    </head>
+    <body class="container">
+        <center>
+            <img  class="logo" src="icon/logo.jpeg" >
+            <h1> SecureVote</h1>
+            <h2>Democracy Through Blockchain</h2>
+            <h3>Election Voting DAPP</h3>
+        </center>
+        
+        <!-- User Authentication -->
+       <br>
+        
+        <!-- Vote Confirmation Message -->
+        <div id="confirmationMessage" style="display: none;">
+            <p>Thank you for casting your vote!</p>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Candidate</th>
+                        <!-- <th>Votes</th> -->
+                        <th>Info</th> <!-- Candidate Information -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>TDP & JANASENA</td>
+                        <!-- <td id="candidate-1-votes"></td> -->
+                        <td id="candidate-1-info">TDP & JANASENA background and stance</td>
+                    </tr>
+                    <tr>
+                        <td>CONGRESS</td>
+                        <!-- <td id="candidate-2-votes"></td> -->
+                        <td id="candidate-2-info">CONGRESS'S background and stance</td>
+                    </tr>
+                    <tr>
+                        <td>YCP</td>
+                        <!-- <td id="candidate-3-votes"></td> -->
+                        <td id="candidate-3-info">YCP's background and stance</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="loginSection">
+            <label for="userAddress">Your Ethereum Address:</label>
+            <input type="text" id="userAddress" />
+            <button onclick="authenticateUser()" class="btn btn-primary">Login</button>
+        </div>
+        <!-- Input for Voting -->
+        <div id="votingSection" style="display: none;">
+            <label for="candidate">Enter Candidate Name:</label>
+            <input type="text" id="candidate" />
+            <button onclick="voteForCandidate()" class="btn btn-primary">Vote</button>
+        </div>
+
+        <!-- Countdown Timer for Time-Based Voting -->
+        <div id="countdownTimer" style="display: none;">
+            <p>Voting ends in: <span id="timer">HH:MM:SS</span></p>
+        </div>
+    </body>
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.37/dist/web3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="index.js"></script>
+</html>
